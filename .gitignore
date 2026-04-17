@@ -1,0 +1,9 @@
+public/
+resources/
+.hugo_build.lock
+medium-import/
+node_modules/
+.DS_Store
+.idea/
+.vscode/
+*.log

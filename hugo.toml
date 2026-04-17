@@ -1,0 +1,75 @@
+baseURL = "https://example.org/"
+languageCode = "zh-tw"
+defaultContentLanguage = "zh-tw"
+title = "AI 輔助維運工程"
+theme = "PaperMod"
+
+enableRobotsTXT = true
+buildDrafts = false
+buildFuture = true
+buildExpired = false
+
+pygmentsUseClasses = true
+
+[minify]
+  disableXML = true
+  minifyOutput = true
+
+[pagination]
+  pagerSize = 10
+
+[params]
+  env = "production"
+  title = "AI 輔助維運工程"
+  description = "從 Claude Code 的運作機制，到企業導入的商務與技術治理"
+  author = "鄧景仁 (Scott Teng)"
+  defaultTheme = "auto"
+  ShowReadingTime = true
+  ShowShareButtons = true
+  ShowPostNavLinks = true
+  ShowBreadCrumbs = true
+  ShowCodeCopyButtons = true
+  ShowWordCount = true
+  ShowToc = true
+  TocOpen = false
+  comments = false
+
+[params.homeInfoParams]
+  Title = "AI 輔助維運工程系列"
+  Content = "為 infra 工程師而寫的 Claude Code 深度系列。從機制理解到商務治理，繁體中文圈第一套系統性文章。"
+
+[[params.socialIcons]]
+  name = "github"
+  url = "https://github.com/"
+
+[menu]
+  [[menu.main]]
+    identifier = "posts"
+    name = "文章"
+    url = "/posts/"
+    weight = 10
+  [[menu.main]]
+    identifier = "categories"
+    name = "分類"
+    url = "/categories/"
+    weight = 20
+  [[menu.main]]
+    identifier = "tags"
+    name = "標籤"
+    url = "/tags/"
+    weight = 30
+  [[menu.main]]
+    identifier = "search"
+    name = "搜尋"
+    url = "/search/"
+    weight = 40
+
+[outputs]
+  home = ["HTML", "RSS", "JSON"]
+
+[markup.highlight]
+  noClasses = false
+  codeFences = true
+  guessSyntax = true
+  lineNos = false
+  style = "monokai"
