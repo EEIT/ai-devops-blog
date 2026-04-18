@@ -1,6 +1,6 @@
 ---
 title: "選型與合約:哪個 Claude 方案才對得起你的工作"
-date: 2026-04-23
+date: 2026-04-18
 weight: 8
 draft: false
 author: "鄧景仁 (Scott Teng)"

@@ -1,6 +1,6 @@
 ---
 title: "為什麼 Claude Code 是不一樣的 AI 工具"
-date: 2026-04-17
+date: 2026-04-12
 weight: 2
 draft: false
 author: "鄧景仁 (Scott Teng)"

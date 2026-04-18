@@ -1,6 +1,6 @@
 ---
 title: "Agent Loop:AI 助理的心跳機制"
-date: 2026-04-18
+date: 2026-04-13
 weight: 3
 draft: false
 author: "鄧景仁 (Scott Teng)"

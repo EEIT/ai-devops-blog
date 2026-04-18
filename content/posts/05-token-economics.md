@@ -1,6 +1,6 @@
 ---
 title: "Token 成本的真相:從原理到節省策略"
-date: 2026-04-22
+date: 2026-04-17
 weight: 7
 draft: false
 author: "鄧景仁 (Scott Teng)"

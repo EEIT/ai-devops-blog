@@ -1,6 +1,6 @@
 ---
 title: "Sub-agent 與 Agent Team:分身 vs 分工(上)—— Sub-agent 的真實樣貌"
-date: 2026-04-20
+date: 2026-04-15
 weight: 5
 draft: false
 author: "鄧景仁 (Scott Teng)"

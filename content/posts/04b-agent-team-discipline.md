@@ -1,6 +1,6 @@
 ---
 title: "Sub-agent 與 Agent Team:分身 vs 分工(下)—— Agent Team 的分工精神"
-date: 2026-04-21
+date: 2026-04-16
 weight: 6
 draft: false
 author: "鄧景仁 (Scott Teng)"

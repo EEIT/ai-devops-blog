@@ -1,6 +1,6 @@
 ---
 title: "《AI 輔助維運工程》系列導讀"
-date: 2026-04-23
+date: 2026-04-11
 weight: 1
 draft: false
 author: "鄧景仁 (Scott Teng)"
