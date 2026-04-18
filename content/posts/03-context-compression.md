@@ -436,6 +436,6 @@ export CLAUDE_CODE_DISABLE_1M_CONTEXT=1
 
 ---
 
-*本文作者:鄧景仁 (Scott Teng) | 資訊服務業 infra 工程師,專注於 Azure / Linux / 安全維運。如需討論可聯繫 scott.teng [at] iisigroup.com。*
+*本文作者:鄧景仁 (Scott Teng) | 資訊服務業 infra 工程師,專注於 Azure / Linux / 安全維運。如需討論可聯繫 scott.teng@iisigroup.com。*
 
 *本系列所有內容為個人學習與實務心得整理,不代表任職機構立場。本文對 Claude Code 內部機制的描述,基於社群對 Claude Code 的公開分析材料與筆者實務觀察,並非 Anthropic 官方文件。具體閾值與行為可能隨版本演進。*

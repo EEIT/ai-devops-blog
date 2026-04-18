@@ -227,6 +227,6 @@ Prompt Cache 是你最好的朋友,它讓「重傳歷史」的成本降到大約
 
 ---
 
-*本文作者:鄧景仁 (Scott Teng) | 資訊服務業 infra 工程師,專注於 Azure / Linux / 安全維運。如需討論可聯繫 scott.teng [at] iisigroup.com。*
+*本文作者:鄧景仁 (Scott Teng) | 資訊服務業 infra 工程師,專注於 Azure / Linux / 安全維運。如需討論可聯繫 scott.teng@iisigroup.com。*
 
 *本系列所有內容為個人學習與實務心得整理,不代表任職機構立場。文中引用的 API 定價為 2026 年第二季的公開資訊,Anthropic 保留隨時調整權利,實際費用請以 Anthropic 官方網站為準。具體 Prompt Cache 行為與其他實作細節可能隨版本演進。*
