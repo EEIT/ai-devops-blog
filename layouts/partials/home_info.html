@@ -1,0 +1,26 @@
+{{- /*
+  Override of PaperMod home_info.html to inject a hero cover image
+  above the homepage title. Controlled by .Site.Params.homeCoverImage
+  (empty / unset = no image, keeps theme default layout).
+  Sync with theme source if PaperMod updates this file.
+  Base: themes/PaperMod/layouts/partials/home_info.html (2026-04)
+*/ -}}
+{{- with site.Params.homeInfoParams }}
+<article class="first-entry home-info">
+    {{- with $.Site.Params.homeCoverImage }}
+    <div class="home-cover" style="margin-bottom: 1.5em;">
+      <img src="{{ . | absURL }}" alt="{{ $.Site.Title }}" style="width: 100%; height: auto; display: block; border-radius: 6px;">
+    </div>
+    {{- end }}
+    <header class="entry-header">
+        <h1>{{ .Title | markdownify }}</h1>
+    </header>
+    <div class="entry-content md-content">
+        {{ $opts := dict "display" "block" }}
+        {{ .Content | $.Page.RenderString $opts }}
+    </div>
+    <footer class="entry-footer">
+        {{ partial "social_icons.html" (dict "align" site.Params.homeInfoParams.AlignSocialIconsTo) }}
+    </footer>
+</article>
+{{- end -}}

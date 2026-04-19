@@ -41,6 +41,8 @@ pygmentsUseClasses = true
   googleSiteVerification = "YSH50LPz5vy9C2GuFTKLRFE1EQrLdv1OLaKGPyheB30"
   # 社群分享預設卡片（放在 static/，部署後路徑 baseURL + defaultOgImage）
   defaultOgImage = "og-image.png"
+  # 首頁 hero 圖片（空字串 = 不顯示）
+  homeCoverImage = "og-image.png"
 
 [params.homeInfoParams]
   Title = "AI 輔助維運工程系列"
