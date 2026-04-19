@@ -1,0 +1,9 @@
+{{- /*
+  Plausible Analytics — 僅在 production + plausibleDomain 有設定時載入。
+  Script 變體 `outbound-links.tagged-events` 一次啟用外連點擊追蹤與自訂事件。
+*/ -}}
+{{- if and (eq hugo.Environment "production") .Site.Params.plausibleDomain -}}
+<script defer data-domain="{{ .Site.Params.plausibleDomain }}"
+        src="https://plausible.io/js/script.outbound-links.tagged-events.js"></script>
+<script>window.plausible = window.plausible || function() { (window.plausible.q = window.plausible.q || []).push(arguments) }</script>
+{{- end -}}

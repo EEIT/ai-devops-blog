@@ -33,6 +33,8 @@ pygmentsUseClasses = true
   ShowToc = true
   TocOpen = false
   comments = false
+  # Plausible Analytics (無 cookie、無同意書); 註冊後填入域名，例如 "eeit.github.io"
+  plausibleDomain = ""
 
 [params.homeInfoParams]
   Title = "AI 輔助維運工程系列"
