@@ -38,7 +38,7 @@ pygmentsUseClasses = true
   # 從 Plausible dashboard 的 snippet 中取得，URL 結構是 https://plausible.io/js/pa-<ID>.js
   plausibleSiteId = "QmUWlO5t0UQ3Vwh_2EfuS"
   # Google Search Console: 從 GSC「HTML 標籤」驗證方法的 content 值貼過來;空字串 = 不注入
-  googleSiteVerification = ""
+  googleSiteVerification = "YSH50LPz5vy9C2GuFTKLRFE1EQrLdv1OLaKGPyheB30"
   # 社群分享預設卡片（放在 static/，部署後路徑 baseURL + defaultOgImage）
   defaultOgImage = "og-image.png"
 
