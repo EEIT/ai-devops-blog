@@ -3,7 +3,7 @@
   且必須 production + plausibleDomain 已設定。
   scroll_90 當作「完讀」信號(留 10% 給作者介紹 / 留言區)。
 */ -}}
-{{- if and .IsPage (eq .Section "posts") (eq hugo.Environment "production") .Site.Params.plausibleDomain -}}
+{{- if and .IsPage (eq .Section "posts") (eq hugo.Environment "production") .Site.Params.plausibleSiteId -}}
 <script>
 (function() {
   const marks = [25, 50, 75, 90];

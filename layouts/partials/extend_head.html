@@ -1,9 +1,12 @@
 {{- /*
-  Plausible Analytics — 僅在 production + plausibleDomain 有設定時載入。
-  Script 變體 `outbound-links.tagged-events` 一次啟用外連點擊追蹤與自訂事件。
+  Plausible Analytics v2 — site-specific script (以 site ID 綁定,沒有 data-domain)。
+  只在 production + plausibleSiteId 有設定時載入。
 */ -}}
-{{- if and (eq hugo.Environment "production") .Site.Params.plausibleDomain -}}
-<script defer data-domain="{{ .Site.Params.plausibleDomain }}"
-        src="https://plausible.io/js/script.outbound-links.tagged-events.js"></script>
-<script>window.plausible = window.plausible || function() { (window.plausible.q = window.plausible.q || []).push(arguments) }</script>
+{{- if and (eq hugo.Environment "production") .Site.Params.plausibleSiteId -}}
+<!-- Privacy-friendly analytics by Plausible -->
+<script async src="https://plausible.io/js/pa-{{ .Site.Params.plausibleSiteId }}.js"></script>
+<script>
+  window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
+  plausible.init()
+</script>
 {{- end -}}
