@@ -47,7 +47,7 @@ description: "Claude Code、Claude.ai 是同一個模型、不同平台，該怎
 
 查完後證據夠硬。學術界 2024 年已經正式命名並量化這個現象（Wataoka et al., *Self-Preference Bias in LLM-as-a-Judge*, 2024）。更關鍵的是，**Anthropic 自己承認**：Claude Sonnet 4.5 的 system card 明載四個現役 Claude 模型在評比自己 vs 其他模型時都會出現偏誤，只是程度不同——Sonnet 4.5 在 benchmark 子測試中「稍微偏向選自己」，Sonnet 4 則更明顯。在詩作子測試中，四個被測 Claude 模型**全都**顯著傾向選擇自己寫的，Sonnet 4.5 只是其中偏誤最小的。2025 年 12 月 Anthropic 還開源了一個叫 Bloom 的工具專門測這件事，測試範圍涵蓋 16 個前沿模型。
 
-不是陰謀、不是個案、不是我過度解讀。是一個有名字、有文獻、官方承認的已知行為。
+不是陰謀、不是個案、不是我過度解讀。"self-preference bias"是一個有名字、有文獻、官方承認的已知行為。
 
 ## 誠實補充：Claude.ai 不是比較準
 

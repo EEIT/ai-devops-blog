@@ -8,3 +8,8 @@ node_modules/
 .idea/
 .vscode/
 *.log
+
+# DOCX source artifacts (本機原稿，不進版控)
+*.docx
+06files/
+06files.zip
