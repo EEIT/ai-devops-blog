@@ -5,7 +5,7 @@ weight: 6
 draft: false
 author: "鄧景仁 (Scott Teng)"
 series: ["AI 輔助維運工程"]
-series_order: 5
+series_order: 4
 tags: ["Claude Code", "Agent Team", "AI Governance", "Workflow Design"]
 categories: ["AI 輔助維運工程"]
 description: "上集把 Sub-agent 當引擎機制拆解完,下集談 Agent Team —— 一個繁體中文圈幾乎沒人認真寫過的題目。為什麼一人分飾多角會搞砸任務?為什麼不同角色需要不同的思維模式?用劇組、手術室、新聞編輯室等人類熟悉的場景,把這個抽象的治理觀念講成你能實際執行的設計。"

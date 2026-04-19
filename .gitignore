@@ -2,6 +2,7 @@ public/
 resources/
 .hugo_build.lock
 medium-import/
+.claude/
 node_modules/
 .DS_Store
 .idea/
