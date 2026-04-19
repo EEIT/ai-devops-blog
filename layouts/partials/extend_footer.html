@@ -1,24 +1,8 @@
 {{- /*
-  Scroll-depth custom events — 只在 posts section 的單篇頁面運作,
-  且必須 production + plausibleDomain 已設定。
-  scroll_90 當作「完讀」信號(留 10% 給作者介紹 / 留言區)。
+  Footer extension point (PaperMod hook).
+  Intentionally empty — Plausible v2 tracks scroll depth natively,
+  so the previous custom scroll_X event monitor was removed to avoid
+  double-counting events.
+
+  Add future footer-scoped scripts here if needed.
 */ -}}
-{{- if and .IsPage (eq .Section "posts") (eq hugo.Environment "production") .Site.Params.plausibleSiteId -}}
-<script>
-(function() {
-  const marks = [25, 50, 75, 90];
-  const fired = new Set();
-  const slug = location.pathname;
-  window.addEventListener('scroll', function () {
-    const h = document.documentElement;
-    const pct = (h.scrollTop + window.innerHeight) / h.scrollHeight * 100;
-    marks.forEach(function (m) {
-      if (pct >= m && !fired.has(m)) {
-        fired.add(m);
-        window.plausible('scroll_' + m, { props: { page: slug } });
-      }
-    });
-  }, { passive: true });
-})();
-</script>
-{{- end -}}
