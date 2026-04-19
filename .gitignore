@@ -13,3 +13,6 @@ node_modules/
 *.docx
 06files/
 06files.zip
+
+# Editor write-test artifact
+content/posts/.write-test.md
