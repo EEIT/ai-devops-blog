@@ -33,9 +33,14 @@ pygmentsUseClasses = true
   ShowToc = true
   TocOpen = false
   comments = false
+  ShowRelated = true
   # Plausible Analytics (無 cookie、無同意書); 使用 v2 site-specific script ID
   # 從 Plausible dashboard 的 snippet 中取得，URL 結構是 https://plausible.io/js/pa-<ID>.js
   plausibleSiteId = "QmUWlO5t0UQ3Vwh_2EfuS"
+  # Google Search Console: 從 GSC「HTML 標籤」驗證方法的 content 值貼過來;空字串 = 不注入
+  googleSiteVerification = ""
+  # 社群分享預設卡片（放在 static/，部署後路徑 baseURL + defaultOgImage）
+  defaultOgImage = "og-image.png"
 
 [params.homeInfoParams]
   Title = "AI 輔助維運工程系列"
@@ -76,3 +81,17 @@ pygmentsUseClasses = true
   guessSyntax = true
   lineNos = false
   style = "monokai"
+
+# 相關文章推薦 (PaperMod ShowRelated 需要這組 config 才會產出結果)
+[related]
+  includeNewer = true
+  threshold = 80
+  toLower = false
+
+[[related.indices]]
+  name = "tags"
+  weight = 100
+
+[[related.indices]]
+  name = "categories"
+  weight = 70

@@ -1,7 +1,9 @@
 {{- /*
-  Plausible Analytics v2 — site-specific script (以 site ID 綁定,沒有 data-domain)。
-  只在 production + plausibleSiteId 有設定時載入。
+  Site-level <head> extensions merged into PaperMod's <head>.
+  Sections: (1) Plausible Analytics (2) Google Search Console (3) OG/Twitter image fallback.
 */ -}}
+
+{{- /* Plausible Analytics v2 — site-specific script (production + siteId gate) */ -}}
 {{- if and (eq hugo.Environment "production") .Site.Params.plausibleSiteId -}}
 <!-- Privacy-friendly analytics by Plausible -->
 <script async src="https://plausible.io/js/pa-{{ .Site.Params.plausibleSiteId }}.js"></script>
@@ -10,3 +12,16 @@
   plausible.init()
 </script>
 {{- end -}}
+
+{{- /* Google Search Console (HTML tag method) — empty param = skip */ -}}
+{{- with .Site.Params.googleSiteVerification -}}
+<meta name="google-site-verification" content="{{ . }}">
+{{- end -}}
+
+{{- /* Default OG / Twitter share card — 1200x630 PNG at site root */ -}}
+{{- $ogImage := absURL (.Site.Params.defaultOgImage | default "og-image.png") -}}
+<meta property="og:image" content="{{ $ogImage }}">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:type" content="image/png">
+<meta name="twitter:image" content="{{ $ogImage }}">
