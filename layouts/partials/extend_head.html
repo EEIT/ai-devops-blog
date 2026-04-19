@@ -1,7 +1,13 @@
 {{- /*
   Site-level <head> extensions merged into PaperMod's <head>.
-  Sections: (1) Plausible Analytics (2) Google Search Console (3) OG/Twitter image fallback.
+  Sections: (1) Google Fonts (2) Plausible Analytics (3) Google Search Console (4) OG/Twitter image fallback.
 */ -}}
+
+{{- /* Google Fonts — Noto Sans TC (body) + Noto Serif TC (headings) */ -}}
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&family=Noto+Serif+TC:wght@500;700&display=swap">
+
 
 {{- /* Plausible Analytics v2 — site-specific script (production + siteId gate) */ -}}
 {{- if and (eq hugo.Environment "production") .Site.Params.plausibleSiteId -}}

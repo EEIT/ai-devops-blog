@@ -1,0 +1,180 @@
+/* ============================================================
+   Anthropic-inspired theme overlay
+   - Warm cream palette (light) + warm dark mode
+   - Accent color = Anthropic Clay (#D97757)
+   - CJK-first typography with Noto Sans TC / Noto Serif TC
+   - Tag pills, link underlines, code block accent border
+   ============================================================ */
+
+/* ---------- Color tokens (light) ---------- */
+:root {
+  --theme: rgb(240, 238, 230);         /* cream #F0EEE6 */
+  --entry: rgb(251, 248, 240);         /* warmer white */
+  --primary: rgb(25, 25, 25);          /* near-black */
+  --secondary: rgb(110, 102, 88);      /* warm muted grey */
+  --tertiary: rgb(228, 219, 202);
+  --content: rgb(45, 43, 40);          /* warm dark text #2D2B28 */
+  --code-block-bg: rgb(45, 43, 40);
+  --code-bg: rgb(232, 225, 209);
+  --border: rgb(214, 203, 183);
+
+  --accent: rgb(217, 119, 87);         /* Anthropic Clay #D97757 */
+  --accent-muted: rgb(201, 110, 81);
+}
+
+/* ---------- Color tokens (dark) ---------- */
+:root[data-theme="dark"] {
+  --theme: rgb(30, 27, 24);
+  --entry: rgb(42, 38, 34);
+  --primary: rgb(240, 238, 230);
+  --secondary: rgb(168, 155, 136);
+  --tertiary: rgb(58, 54, 48);
+  --content: rgb(232, 223, 208);
+  --code-block-bg: rgb(20, 18, 16);
+  --code-bg: rgb(42, 38, 34);
+  --border: rgb(58, 54, 48);
+
+  --accent: rgb(232, 147, 112);
+  --accent-muted: rgb(201, 110, 81);
+}
+
+/* ---------- Typography ---------- */
+html, body {
+  font-family: "Noto Sans TC", "PingFang TC", "Microsoft JhengHei",
+               -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  line-height: 1.75;
+  letter-spacing: 0.01em;
+}
+
+.post-title,
+.post-content h1,
+.post-content h2,
+.post-content h3,
+.first-entry .entry-header h1,
+.post-entry .entry-header h2,
+.related-posts h3 {
+  font-family: "Noto Serif TC", "Source Han Serif TC", Georgia,
+               "Times New Roman", serif;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
+.post-content {
+  font-size: 1.05em;
+}
+.post-content p {
+  margin-bottom: 1.2em;
+}
+.post-content h2 {
+  margin-top: 2em;
+  margin-bottom: 0.6em;
+}
+.post-content h3 {
+  margin-top: 1.5em;
+  margin-bottom: 0.5em;
+}
+
+/* ---------- Links (Clay accent) ---------- */
+.post-content a,
+.home-info a,
+.post-entry a,
+.related-posts a,
+.footer a {
+  color: var(--accent);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+}
+.post-content a:hover,
+.home-info a:hover,
+.post-entry a:hover,
+.related-posts a:hover {
+  color: var(--accent-muted);
+  text-decoration-thickness: 2px;
+}
+
+::selection {
+  background: var(--accent);
+  color: rgb(255, 255, 255);
+}
+
+/* ---------- Inline code & fenced blocks ---------- */
+.post-content code {
+  background: var(--code-bg);
+  padding: 0.15em 0.4em;
+  border-radius: 3px;
+  font-size: 0.92em;
+}
+.post-content pre {
+  border-radius: 6px;
+  border-left: 3px solid var(--accent);
+  padding-left: 1em;
+}
+.post-content pre code {
+  background: transparent;
+  padding: 0;
+  font-size: 0.9em;
+}
+
+/* ---------- Blockquote ---------- */
+.post-content blockquote {
+  border-left: 3px solid var(--accent);
+  color: var(--secondary);
+  font-style: italic;
+  padding: 0.4em 1em;
+  margin: 1.2em 0;
+}
+
+/* ---------- Home hero polish ---------- */
+.home-cover img {
+  box-shadow: 0 4px 24px rgba(30, 20, 10, 0.08);
+  border: 1px solid var(--border);
+}
+:root[data-theme="dark"] .home-cover img {
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.5);
+  border: 1px solid var(--tertiary);
+}
+
+/* ---------- Tag pills ---------- */
+.post-tags li a {
+  background: var(--code-bg);
+  color: var(--secondary);
+  border-radius: 999px;
+  padding: 0.25em 0.85em;
+  font-size: 0.85em;
+  transition: background 0.15s ease, color 0.15s ease;
+  border: none;
+}
+.post-tags li a:hover {
+  background: var(--accent);
+  color: rgb(255, 255, 255);
+}
+
+/* ---------- Post-entry card (post list on home + /posts/) ---------- */
+.post-entry {
+  background: var(--entry);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  transition: box-shadow 0.15s ease, border-color 0.15s ease;
+}
+.post-entry:hover {
+  box-shadow: 0 4px 16px rgba(30, 20, 10, 0.08);
+  border-color: var(--accent);
+}
+:root[data-theme="dark"] .post-entry:hover {
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
+}
+
+/* ---------- Header nav polish ---------- */
+.logo a {
+  font-family: "Noto Serif TC", Georgia, serif;
+  font-weight: 700;
+}
+
+/* ---------- Related posts — align accent palette ---------- */
+.related-posts {
+  border-top-color: var(--border) !important;
+}
+.related-posts h3 {
+  font-size: 1.15em;
+  color: var(--primary);
+}
