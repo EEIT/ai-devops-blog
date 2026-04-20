@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  AI 輔助維運工程 — hero image
+  Composition: 3-node agent loop (思考 → 行動 → 觀察) on the left,
+  title + subtitle on the right, signature bottom-right.
+  Palette retains the Anthropic-inspired clay (#CC785C) on warm beige
+  (#F0EEE6) but the iconography is a loop diagram, not an asterisk mark.
+-->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <defs>
+    <marker id="ah" viewBox="0 0 10 10" refX="7" refY="5"
+            markerWidth="5" markerHeight="5" orient="auto-start-reverse">
+      <path d="M0 0 L10 5 L0 10 z" fill="#CC785C"/>
+    </marker>
+  </defs>
+
+  <rect width="1200" height="630" fill="#F0EEE6"/>
+
+  <!-- Agent Loop graphic, centered at (290, 315). R=140, node_r=38 -->
+  <g transform="translate(290 315)">
+    <!-- 3 clockwise arcs around the ring, each ~90° with gaps for the nodes -->
+    <path d="M 38 -134.75 A 140 140 0 0 1 135.7 34.4"
+          fill="none" stroke="#CC785C" stroke-width="3.5" stroke-linecap="round"
+          marker-end="url(#ah)"/>
+    <path d="M 97.6 100.4 A 140 140 0 0 1 -97.6 100.4"
+          fill="none" stroke="#CC785C" stroke-width="3.5" stroke-linecap="round"
+          marker-end="url(#ah)"/>
+    <path d="M -135.7 34.4 A 140 140 0 0 1 -38 -134.75"
+          fill="none" stroke="#CC785C" stroke-width="3.5" stroke-linecap="round"
+          marker-end="url(#ah)"/>
+
+    <!-- Node 1: 思考 (top) -->
+    <circle cx="0" cy="-140" r="38" fill="#F0EEE6" stroke="#1F1F1F" stroke-width="2.5"/>
+    <text x="0" y="-132" text-anchor="middle"
+          font-family="Noto Sans CJK TC, sans-serif" font-size="22" font-weight="600" fill="#1F1F1F">思考</text>
+
+    <!-- Node 2: 行動 (bottom-right) -->
+    <circle cx="121.2" cy="70" r="38" fill="#F0EEE6" stroke="#1F1F1F" stroke-width="2.5"/>
+    <text x="121.2" y="78" text-anchor="middle"
+          font-family="Noto Sans CJK TC, sans-serif" font-size="22" font-weight="600" fill="#1F1F1F">行動</text>
+
+    <!-- Node 3: 觀察 (bottom-left) -->
+    <circle cx="-121.2" cy="70" r="38" fill="#F0EEE6" stroke="#1F1F1F" stroke-width="2.5"/>
+    <text x="-121.2" y="78" text-anchor="middle"
+          font-family="Noto Sans CJK TC, sans-serif" font-size="22" font-weight="600" fill="#1F1F1F">觀察</text>
+
+    <!-- Center caption -->
+    <text x="0" y="4" text-anchor="middle"
+          font-family="Noto Sans CJK TC, sans-serif" font-size="13" fill="#8A8A8A" letter-spacing="3">agent loop</text>
+  </g>
+
+  <!-- Right-side title block -->
+  <g font-family="Noto Sans CJK TC, sans-serif">
+    <text x="500" y="300" font-size="78" font-weight="800" fill="#1F1F1F">AI 輔助維運工程</text>
+    <text x="500" y="360" font-size="30" fill="#6B6B6B">為 infra 工程師而寫的 Claude Code 系列</text>
+  </g>
+
+  <!-- Bottom-right signature -->
+  <text x="1150" y="585" text-anchor="end"
+        font-family="Noto Sans CJK TC, sans-serif" font-size="20" fill="#8A8A8A">Scott Teng · eeit.github.io/ai-devops-blog</text>
+</svg>
