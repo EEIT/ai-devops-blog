@@ -1,8 +1,14 @@
-baseURL = "https://example.org/"
+# ⚠️ baseURL 目前是 Hugo 預設佔位符，必須改成正式部署網址（例：https://ai-devops-blog.pages.dev/）。
+#    Canonical URL、RSS guid、OG image 絕對路徑、sitemap 皆仰賴此值。
+baseURL = "https://eeit.github.io/ai-devops-blog/"
 languageCode = "zh-tw"
 defaultContentLanguage = "zh-tw"
 title = "AI 輔助維運工程"
 theme = "PaperMod"
+
+# 頂層 copyright 會被 PaperMod footer.html 自動 markdownify 後顯示於每頁頁尾，
+# 並由 rss.xml 填入 <copyright> 欄位。
+copyright = "© 2026 鄧景仁 (Scott Teng) · 授權：[CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/deed.zh_TW)"
 
 enableRobotsTXT = true
 buildDrafts = false
@@ -34,6 +40,10 @@ pygmentsUseClasses = true
   TocOpen = false
   comments = false
   ShowRelated = true
+  # RSS 全文輸出（搭配 layouts/_default/rss.xml override，在每篇末尾注入來源聲明與授權條款）
+  ShowFullTextinRSS = true
+  # 商業授權 / 轉載聯絡信箱（顯示於每篇文章底部版權區塊）
+  contactEmail = "st333117@gmail.com"
   # Plausible Analytics (無 cookie、無同意書); 使用 v2 site-specific script ID
   # 從 Plausible dashboard 的 snippet 中取得，URL 結構是 https://plausible.io/js/pa-<ID>.js
   plausibleSiteId = "QmUWlO5t0UQ3Vwh_2EfuS"

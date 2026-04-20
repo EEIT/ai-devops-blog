@@ -1,0 +1,38 @@
+{{- /*
+  Invisible content-fingerprint watermark.
+
+  Emits a span containing 160 zero-width characters encoding the SHA-1 of
+  the page permalink. ZWSP (U+200B, &#8203;) = bit 0, ZWNJ (U+200C, &#8204;)
+  = bit 1. The span is invisible in rendered HTML (no glyphs, zero width)
+  but is preserved by most copy-paste paths, making it a deterministic
+  provenance marker for the original article.
+
+  Verification (manual):
+    1. Copy suspected infringing text.
+    2. Extract only U+200B and U+200C characters.
+    3. Map U+200B → 0, U+200C → 1 → concatenate → 40 hex chars.
+    4. Compare against sha1(original permalink).
+    A match is strong evidence the text derives from this site.
+
+  Invoked twice per article (near top of content, and inside license footer)
+  for redundancy in case one location is stripped.
+*/ -}}
+{{- $hash := sha1 .Permalink -}}
+{{- $hex2bin := dict
+    "0" "0000" "1" "0001" "2" "0010" "3" "0011"
+    "4" "0100" "5" "0101" "6" "0110" "7" "0111"
+    "8" "1000" "9" "1001" "a" "1010" "b" "1011"
+    "c" "1100" "d" "1101" "e" "1110" "f" "1111" -}}
+{{- $binary := "" -}}
+{{- range $char := split $hash "" -}}
+  {{- $binary = printf "%s%s" $binary (index $hex2bin $char) -}}
+{{- end -}}
+{{- $wm := "" -}}
+{{- range $bit := split $binary "" -}}
+  {{- if eq $bit "0" -}}
+    {{- $wm = printf "%s&#8203;" $wm -}}
+  {{- else -}}
+    {{- $wm = printf "%s&#8204;" $wm -}}
+  {{- end -}}
+{{- end -}}
+<span class="c-wm" aria-hidden="true" data-prov="cc-by-nc-4.0">{{ $wm | safeHTML }}</span>

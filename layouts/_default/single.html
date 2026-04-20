@@ -41,6 +41,8 @@
 
   {{- if .Content }}
   <div class="post-content md-content">
+    {{- /* Invisible provenance watermark #1 — sha1(permalink) encoded in ZWSP/ZWNJ. */ -}}
+    {{- partial "invisible_watermark.html" . }}
     {{- if not (.Param "disableAnchoredHeadings") }}
     {{- partial "anchored_headings.html" .Content -}}
     {{- else }}{{ .Content }}{{ end }}
@@ -60,6 +62,9 @@
     {{- if (and site.Params.ShowShareButtons (ne .Params.disableShare true)) }}
     {{- partial "share_icons.html" . -}}
     {{- end }}
+
+    {{- /* Per-post CC BY-NC 4.0 license block (includes invisible watermark #2). */ -}}
+    {{- partial "post_footer_license.html" . }}
   </footer>
 
   {{- /* Local extension: related posts panel (silent if no matches). */ -}}

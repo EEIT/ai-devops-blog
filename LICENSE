@@ -1,0 +1,102 @@
+AI 輔助維運工程 — Licensing Terms
+===================================
+
+This repository contains two distinct categories of work, licensed separately.
+本儲存庫包含兩類作品，分別授權。
+
+
+1. CONTENT / 文章內容
+-----------------------
+
+Scope: All files under `content/`, `assets/` (editorial imagery), `static/`
+(imagery and written assets), and any written prose or figures authored by
+Scott Teng (鄧景仁) that appear in rendered pages.
+
+適用範圍：`content/`、`assets/`（編輯素材）、`static/`（圖片與文字素材）下的
+所有檔案，以及由作者鄧景仁創作、於網站上呈現的所有文字與圖表。
+
+License: Creative Commons Attribution-NonCommercial 4.0 International
+Public License (CC BY-NC 4.0)
+
+  Human-readable summary:  https://creativecommons.org/licenses/by-nc/4.0/deed.zh_TW
+  Full legal code:         https://creativecommons.org/licenses/by-nc/4.0/legalcode
+
+Copyright © 2026 鄧景仁 (Scott Teng). Licensed under CC BY-NC 4.0.
+
+Under this license you are free to:
+
+  * Share — copy and redistribute the material in any medium or format.
+
+  * Adapt — remix, transform, translate, and build upon the material.
+
+Under the following conditions:
+
+  * Attribution (BY) — You must give appropriate credit to the original
+    author (鄧景仁 / Scott Teng), provide a link to the original article URL,
+    and indicate if changes were made. You may do so in any reasonable
+    manner, but not in any way that suggests the licensor endorses you or
+    your use.
+
+  * NonCommercial (NC) — You may not use the material for commercial
+    purposes. "Commercial" includes but is not limited to: republishing on
+    ad-supported sites, paid newsletters, training datasets for commercial
+    AI models, course materials for paid training programs, and inclusion
+    in for-sale books.
+
+No additional restrictions — You may not apply legal terms or technological
+measures that legally restrict others from doing anything the license permits.
+
+繁體中文快速摘要：
+  ✔ 可以：以完整連結或完整轉載方式分享（須署名作者、註明原文 URL）
+  ✔ 可以：翻譯、節錄、改寫（仍須署名作者、註明原文 URL、標註已修改）
+  ✘ 不可：商業使用（含廣告站、付費電子報、AI 訓練資料集、付費課程教材等）
+
+For commercial licensing or inclusion in publications / paid training
+programs, please contact:
+商業授權或出版引用請聯絡：
+
+    Scott Teng (鄧景仁) — st333117@gmail.com
+
+
+2. CODE / TEMPLATES / 程式碼與模板
+-----------------------------------
+
+Scope: All files under `layouts/`, `archetypes/`, `scripts/`, `hugo.toml`,
+and any other configuration or build-time code authored by the repository
+owner (EXCLUDING `themes/PaperMod/` which is governed by its own license).
+
+適用範圍：`layouts/`、`archetypes/`、`scripts/`、`hugo.toml` 以及其他由
+儲存庫擁有者撰寫的設定與建構程式碼（不含 `themes/PaperMod/`，該 theme
+由其自身授權約束）。
+
+License: MIT License
+
+Copyright © 2026 鄧景仁 (Scott Teng)
+
+Permission is hereby granted, free of charge, to any person obtaining a
+copy of this software and associated documentation files (the "Software"),
+to deal in the Software without restriction, including without limitation
+the rights to use, copy, modify, merge, publish, distribute, sublicense,
+and/or sell copies of the Software, and to permit persons to whom the
+Software is furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in
+all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
+DEALINGS IN THE SOFTWARE.
+
+
+3. THIRD-PARTY / 第三方
+-------------------------
+
+The `themes/PaperMod/` submodule is licensed under the MIT License by its
+respective author (Aditya Telange). See themes/PaperMod/LICENSE for details.
+
+`themes/PaperMod/` submodule 由原作者 Aditya Telange 以 MIT 授權釋出，
+詳見 themes/PaperMod/LICENSE。
