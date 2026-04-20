@@ -8,10 +8,10 @@ series: ["AI 輔助維運工程"]
 series_order: 3
 tags: ["Claude Code", "Context Management", "Token Optimization", "AI Coding"]
 categories: ["AI 輔助維運工程"]
-description: "拆解 Claude Code 最精巧、也最被誤解的設計 —— 四層 Context 壓縮管線。搞懂 context 何時被壓縮、如何決定哪一層啟動,以及手動 /compact 該在什麼時機使用。"
+description: "拆解 Claude Code 中我覺得比較精巧、也容易被誤解的設計 —— 四層 Context 壓縮管線。搞懂 context 何時被壓縮、如何決定哪一層啟動,以及手動 /compact 該在什麼時機使用。"
 ---
 
-> 本文為《AI 輔助維運工程:從 Claude Code 機制到企業落地》系列第 3 篇。前一篇談了 Agent Loop,這一篇會進入**這個系列最硬核的技術主題**。如果你之前就對「為什麼我的 context 會突然不夠用」、「`/compact` 到底何時該按」、「Claude 為什麼突然開始忘東西」這些問題感到困惑,這篇會把黑盒打開。
+> 本文為《AI 輔助維運工程:從 Claude Code 機制到企業落地》系列第 3 篇。前一篇談了 Agent Loop,這一篇會進入**這個系列裡技術密度較高的主題**。如果你之前對「為什麼我的 context 會突然不夠用」、「`/compact` 到底何時該按」、「Claude 為什麼突然開始忘東西」這些問題感到困惑,這篇會把這些機制一起拆開來看。
 
 ## 為什麼需要整整一篇寫這件事
 
@@ -262,7 +262,7 @@ Layer 4 有個優先嘗試的輕量版,叫 **Session Memory Compaction**。
 
 **從成本最低的開始試,能釋放多少算多少;前面的不夠用,才動用更貴的手段**。
 
-這就是整套系統的哲學:**工程師應該主動管理 context 資源,而不是指望運氣**。
+這就是這套系統背後的思路:**對我而言,把 context 當成需要主動管理的資源,比交給運氣靈光來得安心一些**。
 
 ---
 
@@ -330,7 +330,7 @@ export CLAUDE_CODE_DISABLE_1M_CONTEXT=1
 
 ### 時機一:子任務結束時,主動 `/compact`
 
-很多人以為 `/compact` 只在 context 快滿時才要用。這是誤解。
+很多人以為 `/compact` 只在 context 快滿時才要用。這是我自己一開始也誤解的地方。
 
 更聰明的用法是:**每次完成一個子任務後,主動執行 `/compact`**。
 
@@ -340,7 +340,7 @@ export CLAUDE_CODE_DISABLE_1M_CONTEXT=1
 - 哪些需要保留(「這個決策後面還要用」)
 - 下一個子任務需要什麼 context 基礎
 
-這時候主動 `/compact` 並帶上 custom instruction,會比自動摘要精準得多。
+這時候主動 `/compact` 並帶上 custom instruction,可能會比自動摘要更貼近你的需求。
 
 範例:
 
@@ -359,7 +359,7 @@ export CLAUDE_CODE_DISABLE_1M_CONTEXT=1
 2. 結束當前 session
 3. 開新的,從頭讀那個檔案作為起點
 
-這比指望四層壓縮都還要乾淨。
+這比指望四層壓縮都要來得乾淨一些。
 
 ### 時機三:知道何時該停
 
@@ -391,15 +391,15 @@ export CLAUDE_CODE_DISABLE_1M_CONTEXT=1
 
 ---
 
-## 一個值得內化的心態
+## 一個我自己偏好的心態
 
-四層壓縮聽起來很複雜,但它給你一個重要觀念:
+四層壓縮聽起來很複雜,但它主要提醒一個觀念:
 
 > **Context 是工程資源,不是取之不盡的倉庫**。
 
 你用任何工具時都有資源觀念 —— 記憶體、磁碟、網路頻寬都有上限。AI 助理的 context 也一樣,只是它太新,大家還沒建立習慣。
 
-有這個觀念之後,你自然會做對的事:
+有這個觀念之後,我自己覺得一些選擇變得比較自然:
 
 - 不會寫 10 頁的 CLAUDE.md
 - 不會把整個 codebase 丟進對話
@@ -407,7 +407,7 @@ export CLAUDE_CODE_DISABLE_1M_CONTEXT=1
 - 會在關鍵時刻 `/compact`
 - 會把結論寫進檔案,而不是記在對話裡
 
-這些習慣累積起來,是「熟練使用 Claude Code」和「一直踩雷」之間最大的分野。
+這些習慣累積起來,我覺得是「比較熟練使用 Claude Code」跟「一直踩雷」之間一個比較明顯的分野。
 
 ---
 
@@ -436,6 +436,6 @@ export CLAUDE_CODE_DISABLE_1M_CONTEXT=1
 
 ---
 
-*本文作者:鄧景仁 (Scott Teng) | 資訊服務業 infra 工程師,專注於 Azure / Linux / 安全維運。如需討論可聯繫 scott.teng@iisigroup.com。*
+*本文作者:鄧景仁 (Scott Teng) | 資訊服務業 infra 工程師,專注於 Azure / Linux / 安全維運。如需討論可聯繫 st333117@gmail.com。*
 
 *本系列所有內容為個人學習與實務心得整理,不代表任職機構立場。本文對 Claude Code 內部機制的描述,基於社群對 Claude Code 的公開分析材料與筆者實務觀察,並非 Anthropic 官方文件。具體閾值與行為可能隨版本演進。*
