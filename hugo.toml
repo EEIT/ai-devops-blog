@@ -1,13 +1,12 @@
-# ⚠️ baseURL 目前是 Hugo 預設佔位符，必須改成正式部署網址（例：https://ai-devops-blog.pages.dev/）。
-#    Canonical URL、RSS guid、OG image 絕對路徑、sitemap 皆仰賴此值。
+# WARNING: baseURL must match the deployed site URL.
+# Canonical URL, RSS guid, OG image absolute paths, and sitemap depend on it.
 baseURL = "https://eeit.github.io/ai-devops-blog/"
 languageCode = "zh-tw"
 defaultContentLanguage = "zh-tw"
 title = "AI 輔助維運工程"
 theme = "PaperMod"
 
-# 頂層 copyright 會被 PaperMod footer.html 自動 markdownify 後顯示於每頁頁尾，
-# 並由 rss.xml 填入 <copyright> 欄位。
+# Top-level copyright is rendered by PaperMod in the footer and reused in RSS.
 copyright = "© 2026 鄧景仁 (Scott Teng) · 授權：[CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/deed.zh_TW)"
 
 enableRobotsTXT = true
@@ -28,6 +27,7 @@ pygmentsUseClasses = true
   env = "production"
   title = "AI 輔助維運工程"
   description = "從 Claude Code 的運作機制，到企業導入的商務與技術治理"
+  keywords = ["Claude Code", "AI 維運", "DevOps", "SRE", "AI 工程治理", "企業治理"]
   author = "鄧景仁 (Scott Teng)"
   defaultTheme = "auto"
   ShowReadingTime = true
@@ -40,9 +40,9 @@ pygmentsUseClasses = true
   TocOpen = false
   comments = false
   ShowRelated = true
-  # RSS 全文輸出（搭配 layouts/_default/rss.xml override，在每篇末尾注入來源聲明與授權條款）
+  # Full-text RSS output.
   ShowFullTextinRSS = true
-  # 商業授權 / 轉載聯絡信箱（顯示於每篇文章底部版權區塊）
+  # Contact mailbox for licensing and reposting inquiries.
   contactEmail = "st333117@gmail.com"
   # Plausible Analytics (無 cookie、無同意書); 使用 v2 site-specific script ID
   # 從 Plausible dashboard 的 snippet 中取得，URL 結構是 https://plausible.io/js/pa-<ID>.js
@@ -54,13 +54,16 @@ pygmentsUseClasses = true
   # 首頁 hero 圖片（空字串 = 不顯示）
   homeCoverImage = "og-image.png"
 
+[params.schema]
+  sameAs = ["https://github.com/EEIT"]
+
 [params.homeInfoParams]
   Title = "AI 輔助維運工程系列"
   Content = "為 infra 工程師而寫的 Claude Code 深度系列。從機制理解到商務治理，繁體中文圈第一套系統性文章。"
 
 [[params.socialIcons]]
   name = "github"
-  url = "https://github.com/"
+  url = "https://github.com/EEIT/ai-devops-blog"
 
 [menu]
   [[menu.main]]
